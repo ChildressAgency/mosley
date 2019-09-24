@@ -1,0 +1,1 @@
+{"version":3,"sources":["includes/heros.scss"],"names":[],"mappings":"AAAA,MACE,iBAAiB,CACjB,2BAA4B,CAC5B,qBAAsB","file":"../../../scss/includes/heros.css","sourcesContent":["#hero{\r\n  position:relative;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n}"]}

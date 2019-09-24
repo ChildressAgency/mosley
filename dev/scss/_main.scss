@@ -1,5 +1,174 @@
 body{
   color: #000;
   font-size: 18px;
-  font-family: $font-family-serif;
+  font-family: $font-family-main;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+}
+
+h1{
+  font-size: 50px;
+}
+h2{
+  font-size: 40px;
+}
+h3{
+  font-size: 28px;
+}
+h4{
+  font-size:24px;
+}
+
+a{
+  transition: all .3s ease;
+  color: $brand-color;
+
+  &:hover,
+  &:focus{
+    color: $alt-color;
+    text-decoration:none;
+  }
+}
+
+.btn-main{
+  display: inline-block;
+  color: #fff;
+  font-size: 26px;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $brand-color;
+  padding:5px 40px;
+  border:none;
+  border-radius:0;
+
+  &.btn-lg{
+    font-size: 40px;
+  }
+
+  &.btn-block{
+    display: block;
+  }
+
+  &.btn-light{
+    background-color: $brand-color-light;
+  }
+
+  &:hover,
+  &:focus{
+    text-decoration: none;
+    background-color: $alt-color;
+    color: #fff;
+  }
+}
+
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index:1;
+  background-color: rgba(0, 0, 0, .5);
+
+  &.green{
+    background-color: rgba(36, 66, 14, .5);
+  }
+}
+
+.section-title{
+  text-align: center;
+  margin-bottom:40px;
+  color: $alt-color;
+}
+
+#latest-news{
+  padding-top:40px;
+  padding-bottom:80px;
+}
+
+.blog-loop{
+  .card{
+    border:none;
+    margin-top: 25px;
+
+    .card-body{
+      padding: 0;
+      margin-top:10px;
+    }
+
+    .card-title{
+      font-size: 22px;
+      color: $brand-color;
+      margin-bottom:5px;
+    }
+
+    .read-more{
+      color: #000;
+      font-style: italic;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+#contact{
+  margin-top:40px;
+
+  .image-side{
+    @include media-breakpoint-up(lg){
+      img{
+        margin-left:35%;
+        margin-top: -8%;
+      }
+    }
+  }
+
+  .text-side{
+    background-color: $brand-color;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(md){
+      justify-content: center;
+    }
+  }
+
+  .contact-form{
+    max-width:400px;
+
+    h4{
+      color:#fff;
+      margin-bottom:25px;
+    }
+
+    .form-control{
+      border-radius: 0;
+    }
+  }
+}
+
+#affiliations{
+  background-color: #fff;
+  padding-top:40px;
+  padding-bottom:40px;
+
+  .affiliation-list{
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li{
+      display:inline-block;
+      margin: 25px;
+    }
+  }
 }

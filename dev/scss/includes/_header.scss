@@ -1,0 +1,44 @@
+.masthead{
+  padding-top:5px;
+  padding-bottom: 5px;
+
+  .social{
+    text-align: right;
+
+    a{
+      color: $alt-color;
+
+      & + a{
+        margin-left:15px;
+      }
+
+      &:hover,
+      &:focus{
+        color: $brand-color;
+        text-decoration:none;
+      }
+    }
+  }
+}
+
+#navbar{
+  .nav-link{
+    font-size: 20px;
+    color: #000;
+    font-family: $font-family-sans;
+    text-transform: uppercase;
+  }
+
+  .nav-item.active .nav-link,
+  .nav-item:hover>.nav-link{
+    border-bottom: 7px solid $brand-color;
+    padding-bottom:0;
+  }
+
+  .dropdown-item{
+    font-family: $font-family-sans;
+    text-transform: uppercase;
+    font-size:18px;
+    color: #000;
+  }
+}

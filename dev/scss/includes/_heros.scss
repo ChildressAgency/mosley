@@ -1,0 +1,56 @@
+#hero{
+  position:relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .scroll{
+    position: absolute;
+    bottom:15px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #fff;
+    text-transform:uppercase;
+    font-family: $font-family-sans;
+    font-size:12px;
+
+    &::before{
+      content:"";
+      height: 40px;
+      width: 0px;
+      border-left: 1px solid #fff;
+      position:absolute;
+      top: -50px;
+      left: 50%;
+    }
+  }
+
+  &.hp-hero{
+    padding-bottom:160px;
+  }
+}
+
+.hero-caption{
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+
+  h1,h2{
+    font-size: 80px;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-main;
+    
+    span{
+      display: block;
+      font-size: .5em;
+      font-family: $font-family-sans;
+    }
+
+    @include media-breakpoint-down(sm){
+      font-size:58px;
+    }
+  }
+}
