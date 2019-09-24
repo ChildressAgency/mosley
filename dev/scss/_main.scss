@@ -2,6 +2,9 @@ body{
   color: #000;
   font-size: 18px;
   font-family: $font-family-main;
+  background-image: url(images/marble-bg-left.jpg), url(images/marble-bg-right.jpg);
+  background-repeat: repeat-y, repeat-y;
+  background-position: left top, right top;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -86,6 +89,9 @@ a{
   color: $alt-color;
 }
 
+#main{
+}
+
 #latest-news{
   padding-top:40px;
   padding-bottom:80px;
@@ -95,6 +101,7 @@ a{
   .card{
     border:none;
     margin-top: 25px;
+    background-color: transparent;
 
     .card-body{
       padding: 0;
