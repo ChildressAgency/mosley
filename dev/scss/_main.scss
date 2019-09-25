@@ -269,3 +269,52 @@ article{
     }
   }
 }
+
+#faqs{
+  margin-bottom:100px;
+}
+#faqs-accordion{
+  .card{
+    border:none;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .card-header{
+    border: none;
+    background-color: transparent;
+    padding-left:75px;
+
+    h3{
+      font-size: 26px;
+    }
+
+    a{
+      position: relative;
+
+      &.collapsed::before{
+        content: "\002b";
+        left:-75px;
+        top: 18px;
+        font-size: 85px;
+        font-weight: $font-weight-normal;
+      }
+      &::before{
+        position: absolute;
+        content: "\002d";
+        left: -70px;
+        top: 2px;
+        font-size: 140px;
+        line-height: 0em;
+        color: $alt-color;
+        font-weight: $font-weight-normal;
+      }
+
+    }
+  }
+
+  .card-body{
+    padding-left:75px;
+    padding-top:0;
+  }
+}
