@@ -168,6 +168,36 @@ article{
   }
 }
 
+#contact-us{
+  background-image: url(images/leaf-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .contact-form{
+    max-width: 440px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color: $alt-color;
+    padding:15px;
+
+    h4{
+      font-size: 18px;
+      color: #fff;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .form-control{
+    border-radius: 0;
+  }
+
+  label{
+    color: #fff;
+  }
+}
+
 #affiliations{
   background-color: #fff;
   padding-top:40px;
