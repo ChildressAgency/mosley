@@ -163,3 +163,16 @@ function mosley_footer_services_fallback_menu(){ ?>
     </li>
   </ul>
 <?php }
+
+add_action('widgets_init', 'mosley_register_sidebars');
+function mosley_register_sidebars(){
+  register_sidebar(array(
+    'name' => esc_html__('Blog Sidebar', 'mosley'),
+    'id' => 'sidebar-blog',
+    'description' => esc_html__('Add widgets here to appear in your sidebar on blog posts and archive pages.', 'mosley'),
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+}
