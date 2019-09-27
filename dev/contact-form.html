@@ -1,0 +1,56 @@
+<div class="contact-form">
+  <div class="form-group">
+    <label for="fname" class="sr-only">First Name</label>
+    [text fname id:fname class:form-control placeholder "First Name"]
+  </div>
+  <div class="form-group">
+    <label for="lname" class="sr-only">Last Name</label>
+    [text lname id:lname class:form-control placeholder "Last Name"]
+  </div>
+  <div class="form-group">
+    <label for="your-email" class="sr-only">Email</label>
+    [email* your-email id:your-email class:form-control placeholder "Email*"]
+  </div>
+  <div class="form-group">
+    <label for="company" class="sr-only">Company Name</label>
+    [text company id:company class:form-control placeholder "Company Name"]
+  </div>
+  <div class="form-group">
+    <label for="phone" class="sr-only">Phone Number</label>
+    [text phone id:phone class:form-control placeholder "Phone Number"]
+  </div>
+  <h4>Interested Service:</h4>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-check">
+        [checkbox service use_label_element "Stormwater"]
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-check">
+        [checkbox service use_label_element "Environmental Consulting"]
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="form-check">
+        [checkbox service use_label_element "Environmental Assessment"]
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-check">
+        [checkbox service use_label_element "Environmental Studies"]
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="notes" class="sr-only">Additional Notes</label>
+    [textarea notes x6 class:form-control placeholder "Additional Notes"]
+  </div>
+  <div class="form-group">
+    [submit class:btn-main class:btn-light class:btn-block "SUBMIT"]
+  </div>
+</div>
