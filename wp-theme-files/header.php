@@ -56,6 +56,16 @@
   <?php
     $hero_image = get_field('hero_background_image');
     $hero_image_css = get_field('hero_background_image_css');
+    $hero_caption = get_field('hero_caption');
+    $hero_caption_image = get_field('hero_caption_image');
+
+    if(is_home()){
+      $hero_image = get_field('news_page_hero_hero_background_image', 'option');
+      $hero_image_css = get_field('news_page_hero_hero_background_image_css', 'option');
+      $hero_caption = get_field('news_page_hero_hero_caption', 'option');
+      $hero_caption_image = get_field('news_page_hero_hero_caption_image', 'option');
+    }
+
     if(!$hero_image){
       $hero_image = get_field('default_hero_background_image', 'option');
       $hero_image_css = get_field('default_hero_background_image_css', 'option');
@@ -65,11 +75,10 @@
     <div class="container">
       <div class="hero-caption">
         <?php 
-          $hero_caption_image = get_field('hero_caption_image');
           if($hero_caption_image): ?>
             <img src="<?php echo esc_url($hero_caption_image['url']); ?>" class="img-fluid d-block mx-auto mb-5" alt="<?php echo esc_attr($hero_caption_image['alt']); ?>" />
         <?php endif; ?>
-        <h2><?php echo wp_kses_post(get_field('hero_caption')); ?></h2>
+        <h2><?php echo wp_kses_post($hero_caption); ?></h2>
       </div>
     </div>
     <?php if(is_front_page()): ?>
