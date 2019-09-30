@@ -221,7 +221,7 @@ article{
 
 #blog-loop{
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 300px;
 
   .blog-loop-item{
     margin-bottom: 25px;
@@ -271,7 +271,7 @@ article{
 }
 
 #faqs{
-  margin-bottom:100px;
+  margin-bottom:300px;
 }
 #faqs-accordion{
   .card{
@@ -317,4 +317,8 @@ article{
     padding-left:75px;
     padding-top:0;
   }
+}
+
+.has-2-columns{
+  margin-top:40px;
 }
