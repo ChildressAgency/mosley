@@ -1,0 +1,28 @@
+.btn-main{
+  display :inline-block;
+  color: #fff;
+  font-size: 26px;
+  font-family: "semplicitapro", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #37b34a;
+  padding: 5px 40px;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-main-block:hover,
+.btn-main-block:focus{
+  text-decoration: none;
+  background-color: #25a9e0;
+  color: #fff;
+}
+
+.btn-block-wrapper{
+  margin-top: 40px;
+  margin-bottom:40px;
+}
+.btn-block-wrapper.aligncenter{
+  text-align:center;
+}

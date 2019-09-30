@@ -1,0 +1,12 @@
+.quick-link-block{
+  margin-top: 25px;
+}
+
+.quick-link-block img{
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.quick-link-block .media-body h3{
+  font-size:22px;
+}
