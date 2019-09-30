@@ -74,8 +74,7 @@ function mosley_styles(){
   wp_register_style(
     'typekit-fonts',
     'https://use.typekit.net/jad8odt.css'
-  )
-
+  );
   wp_register_style(
     'fontawesome',
     'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
@@ -141,7 +140,7 @@ function mosley_header_fallback_menu(){ ?>
         <a href="<?php echo esc_url(home_url('news')); ?>" class="nav-link"><?php echo esc_html__('News', 'mosley'); ?></a>
       </li>
       <li class="nav-item<?php if(is_page('contact-us')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="nav-link"><?php esc_html__('Contact Us', 'mosley'); ?></a>
+        <a href="<?php echo esc_url(home_url('contact-us')); ?>" class="nav-link"><?php echo esc_html__('Contact Us', 'mosley'); ?></a>
       </li>
     </ul>
   </div>
@@ -175,4 +174,56 @@ function mosley_register_sidebars(){
     'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
+}
+
+add_filter('block_categories', 'mosley_custom_block_category', 10, 2);
+function mosley_custom_block_category($categories, $post){
+  return array_merge(
+    $categories,
+    array(
+      array(
+        'slug' => 'custom-blocks',
+        'title' => esc_html__('Custom Blocks', 'mosley'),
+        'icon' => 'wordpress'
+      )
+    )
+  );
+}
+
+add_action('acf/init', 'mosley_register_blocks');
+function mosley_register_blocks(){
+  if(function_exists('acf_register_block_type')){
+    acf_register_block_type(array(
+      'name' => 'callout-block',
+      'title' => esc_html__('Callout Block', 'mosley'),
+      'description' => esc_html__('Add a Callout Block.', 'mosley'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/callout_block.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/callout_block.css'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'prestyled_button',
+      'title' => esc_html__('Pre-Styled Button', 'mosley'),
+      'description' => esc_html__('Add a pre-styled button.', 'mosley'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/prestyled-button.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/prestyled-button.css'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'quick_link',
+      'title' => esc_html__('Quick Link Block', 'mosley'),
+      'description' => esc_html__('Add a Quick Link styled block.', 'mosley'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/quick-link.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/quick-link.css'
+    ));
+  }
 }
