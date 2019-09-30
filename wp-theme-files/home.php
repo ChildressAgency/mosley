@@ -2,15 +2,7 @@
   <main id="main">
     <div class="container">
       <article>
-        <?php 
-          if(have_posts()){
-            while(have_posts()){
-              the_post();
-
-              the_content();
-            }
-          }
-        ?>
+        <?php echo apply_filters('the_content', wp_kses_post(get_field('news_page_intro', 'option'))); ?>
       </article>
     </div>
 
@@ -69,7 +61,7 @@
                 </div>
 
             <?php endif; ?>
-            <div class="pagination"><?php wp_pagenavi(); ?></div>
+            <div class="pagination"><?php wp_pagenavi(array('query' => $blog_posts)); ?></div>
           </div>
           <div class="col-lg-4">
             <?php get_sidebar('blog'); ?>
