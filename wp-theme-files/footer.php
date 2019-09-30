@@ -6,9 +6,10 @@
           $contact_section_image = get_field('contact_section_image', 'option'); 
           if($contact_section_image): ?>
             <img src="<?php echo esc_url($contact_section_image['url']); ?>" class="img-fluid" alt="<?php echo esc_attr($contact_section_image['alt']); ?>" />
+        <?php endif; ?>
       </div>
       <div class="col-lg-6 text-side">
-        <?php echo do_shortcode(get_field('contact_section_form_shortcode')); ?>
+        <?php echo do_shortcode(get_field('contact_section_form_shortcode', 'option')); ?>
       </div>
     </div>
   </section>
@@ -17,7 +18,7 @@
 <?php if(have_rows('affiliations', 'option')): ?>
   <section id="affiliations">
     <div class="container">
-      <h2 class="section-title"><?php echo esc_html__('Affiliations', 'option'); ?></h2>
+      <h2 class="section-title"><?php echo esc_html__('Affiliations', 'mosley'); ?></h2>
       <ul class="affiliation-list">
         <?php while(have_rows('affiliations', 'option')): the_row(); ?>
           <?php
