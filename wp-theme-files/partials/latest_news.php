@@ -15,7 +15,7 @@
             <div class="card">
               <?php 
                 if(has_post_thumbnail()){
-                  $post_image_url = get_the_post_thumbnail_url('full');
+                  $post_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                   $post_image_id = get_post_thumbnail_id();
                   $post_image_alt = get_post_meta($post_image_id, '_wp_attachment_image_alt', true);
                 }
