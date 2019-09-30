@@ -4,7 +4,7 @@
       <article>
         <?php
           if(have_posts()){
-            while(have_post()){
+            while(have_posts()){
               the_post();
 
               the_content();
@@ -31,7 +31,7 @@
                 </div>
                 <div id="answer-<?php echo $c; ?>" class="collapse" aria-labelledby="question-<?php echo $c; ?>" data-parent="#faqs-accordion">
                   <div class="card-body">
-                    <?php echo wp_kses_post(get_field('answer')); ?>
+                    <?php echo wp_kses_post(get_sub_field('answer')); ?>
                   </div>
                 </div>
               </div>
