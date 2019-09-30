@@ -36,3 +36,43 @@ function mosley_load_textdomain(){
   load_plugin_textdomain('mosley', false, basename(MOSLEY_PLUGIN_DIR) . '/languages');
 }
 
+add_action('acf/init', 'mosley_acf_options_page');
+function mosley_acf_options_page(){
+  acf_add_options_page(array(
+    'page_title' => esc_html__('General Settings', 'mosley'),
+    'menu_title' => esc_html__('General Settings', 'mosley'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => esc_html__('Contact Information', 'mosley'),
+    'menu_title' => esc_html__('Contact Information', 'mosley'),
+    'parent_slug' => 'general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => esc_html__('Social', 'mosley'),
+    'menu_title' => esc_html__('Social', 'mosley'),
+    'parent_slug' => 'general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => esc_html__('Defaults', 'mosley'),
+    'menu_title' => esc_html__('Defaults', 'mosley'),
+    'parent_slug' => 'general-settings'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title' => esc_html__('Affiliations', 'mosley'),
+    'menu_title' => esc_html__('Affiliations', 'mosley'),
+    'parent_slug' => 'general-settings'
+  ));
+  
+  acf_add_options_sub_page(array(
+    'page_title' => esc_html__('News Page Settings', 'mosley'),
+    'menu_title' => esc_html__('News Page', 'mosley'),
+    'parent_slug' => 'general-settings'
+  ));
+}
